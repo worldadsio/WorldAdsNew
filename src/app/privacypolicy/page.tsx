@@ -25,7 +25,7 @@ const privacyPolicyData: PrivacyPolicyData = {
   title: "WorldAds Privacy Policy",
   effectiveDate: "May, 2024",
   introduction:
-    "Welcome to WorldAds! Your privacy is important to us. This Privacy Policy outlines how WorldAds identifies, use, protect, collect, store, shares, and discloses information in relation to our mobile services, website, and any software available on or in connection with WorldAds services (collectively, the Service). This policy also describes your choices regarding the collection and use of your information.",
+    "Welcome to WorldAds! Your privacy is important to us. This Privacy Policy outlines how WorldAds identifies, uses, protects, collects, stores, shares, and discloses information in relation to our mobile services, website, and any software available on or in connection with WorldAds services (collectively, the Service). This policy also describes your choices regarding the collection and use of your information.",
   sections: [
     {
       title: "1. Information We Collect",
@@ -106,40 +106,45 @@ const privacyPolicyData: PrivacyPolicyData = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen container mx-auto bg-background py-12 mt-14 sm:mt-28">
-      <div className="px-5 md:px-0">
-        <h1 className="mb-8 text-center text-[30px] md:text-[44px] font-bold tracking-tight">
-          {privacyPolicyData.title}
-        </h1>
+    <div className="min-h-screen container mx-auto bg-white pt-40 px-4">
+      <div className="mb-4 text-center text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+        {privacyPolicyData.title}
+      </div>
+      <div className="mb-4 rounded-lg mt-16">
+        <h2 className="text-xl mb-2 font-normal text-gray-900 mt-4">
+          Effective Date: {privacyPolicyData.effectiveDate}
+        </h2>
+        <p className="text-[16px] font-light text-gray-700">
+          {privacyPolicyData.introduction}
+        </p>
+      </div>
 
-        <div className="space-y-6 text-sm leading-6">
-          <p className="text-muted-foreground text-[16px] font-normal">
-            Effective Date: {privacyPolicyData.effectiveDate}
-          </p>
-
-          <p className="text-[16px] font-normal">
-            {privacyPolicyData.introduction}
-          </p>
-
-          {privacyPolicyData.sections.map((section, index) => (
-            <section key={index} className="space-y-4">
-              <h2 className="text-xl font-semibold text-black">
+      <div className="space-y-3">
+        {privacyPolicyData.sections.map((section, index) => (
+          <section
+            key={index}
+            className="bg-white overflow-hidden sm:rounded-lg"
+          >
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900">
                 {section.title}
               </h2>
+            </div>
+            <div className="py-4">
               {section.content.map((item, itemIndex) => (
-                <div key={itemIndex}>
+                <div key={itemIndex} className="mb-4 last:mb-0">
                   {item.subtitle && (
-                    <h3 className="text-[20px] font-medium text-black">
+                    <h3 className="text-[18px] font-medium text-gray-900 mb-2">
                       {item.subtitle}
                     </h3>
                   )}
-                  <p>{item.text}</p>
+                  <p className="text-[16px] text-gray-700">{item.text}</p>
                   {item.list && (
-                    <ul className="list-disc pl-6 text-[16px] font-normal space-y-2">
+                    <ul className="mt-2 space-y-1">
                       {item.list.map((listItem, listItemIndex) => (
                         <li
                           key={listItemIndex}
-                          className="text-[16px] font-normal"
+                          className="text-[16px] text-gray-700"
                         >
                           {listItem}
                         </li>
@@ -147,25 +152,25 @@ export default function PrivacyPolicy() {
                     </ul>
                   )}
                   {item.serviceProviders && (
-                    <p className="mt-2 text-[16px] font-normal">
+                    <p className="mt-2 text-[16px] text-gray-700">
                       {item.serviceProviders}
                     </p>
                   )}
                   {item.legalRequirements && (
-                    <p className="mt-2 text-[16px] font-normal">
+                    <p className="mt-2 text-[16px] text-gray-700">
                       {item.legalRequirements}
                     </p>
                   )}
                 </div>
               ))}
-            </section>
-          ))}
-
-          <p className="mt-8 text-start text-xl font-semibold">
-            {privacyPolicyData.conclusion}
-          </p>
-        </div>
+            </div>
+          </section>
+        ))}
       </div>
+
+      <p className="mt-3 text-start text-xl font-semibold text-gray-900">
+        {privacyPolicyData.conclusion}
+      </p>
     </div>
   );
 }

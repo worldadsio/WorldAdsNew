@@ -4,6 +4,7 @@ import Image from "next/image";
 import image6 from "../../../public/Images/Economic.png";
 import Ride from "../../../public/Images/Ride.png";
 import image7 from "../../../public/Images/Frame.png";
+import Link from "next/link";
 
 function Worldsection() {
   const [activeButton, setActiveButton] = useState<number>(1);
@@ -20,13 +21,15 @@ function Worldsection() {
       description:
         "Own a Worldads screen / node and become a cornerstone of a new model of digital advertising, you can choose to manage your smart digital screen or delegate to an operator and start earning as advertisers choose your prime ad slots.",
       image: image6,
+      link: "https://docs.worldads.io/the-worldads-model/node-operators",
     },
     {
       id: 2,
       title: "Ride & Earn",
       description:
-        "Transform every mile into a profitable venture as our  Smart Rooftop Digital Screens turn miles into money, making every trip count.",
+        "Transform every mile into a profitable venture as our Smart Rooftop Digital Screens turn miles into money, making every trip count.",
       image: Ride,
+      link: "https://docs.worldads.io/the-worldads-model/ride-and-earn",
     },
     {
       id: 3,
@@ -34,6 +37,7 @@ function Worldsection() {
       description:
         "Our Smart digital nodes are hard to miss as you can seize the spotlight in bustling areas with high-traffic visibility. Make your brand the center of attention with Worldads.",
       image: image7,
+      link: "https://docs.worldads.io/the-worldads-model/advertise-with-worldads",
       extraData: [
         {
           title: "Precision Targeting",
@@ -51,8 +55,18 @@ function Worldsection() {
       ],
     },
   ];
+
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+  // Dot navigation click handler
+  const handleDotClick = (index: number) => {
+    setActiveSlide(index);
+  };
+
   return (
-    <section id="features" className="max-md:mt-10 md:py-20 container mx-auto">
+    <section
+      id="features"
+      className="max-md:mt-10 md:py-20 container relative mx-auto"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mx-6 items-start">
         <div className="rounded-[60px]   flex justify-center items-center w-full  md:h-[811px]  px-10 py-16 md:px-20  bg-[#FAFAFA] ">
           <div className="w-full space-y-8 md:space-y-10 text-left">
@@ -129,9 +143,8 @@ function Worldsection() {
                       ))}
                     </ul>
                   )}
-
                   <button className="px-6 py-3 mt-14 border ring-[1px] w-[106px] h-[36px] md:w-[177px] md:h-[60px] ring-gray-300 ring-offset-8 border-black text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-colors duration-150">
-                    Learn More
+                    <Link href={section.link}>Learn More</Link>
                   </button>
                 </div>
               </div>
@@ -184,7 +197,7 @@ function Worldsection() {
                 </ul>
               )}
               <button className="px-6 py-3 mt-10 border ring-[1px] md:w-[177px] md:h-[60px] ring-gray-300 ring-offset-8 border-black text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-colors duration-150">
-                Learn More
+                <Link href={section.link}>Learn More</Link>
               </button>
             </div>
           </div>

@@ -26,11 +26,13 @@ function Herosection() {
         <div className="text-container text-center my-10 w-full lg:max-w-[60%] mx-auto">
           <div className=" text-container mt-10 flex items-center gap-8 justify-center">
             <button className="px-6 py-3 border ring-[1px] md:w-[177px] md:h-[60px] ring-gray-300 ring-offset-8 border-black text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-colors duration-150">
-              Learn More
+              <Link href="https://docs.worldads.io/">
+                Learn More
+              </Link>
             </button>
             <div className="border-l-2 border-black pl-3">
               <div className="flex items-center gap-3">
-                <Link href="https://discord.com" aria-label="discord">
+                <Link href="https://discord.gg/P94JWEwbeE" aria-label="discord">
                   <Image
                     src={image1}
                     alt="logo"
@@ -39,7 +41,7 @@ function Herosection() {
                     className="h-8 w-8 "
                   />
                 </Link>
-                <Link href="https://x.com/?lang=en" aria-label="Twitter">
+                <Link href="https://x.com/worldadsdotio" aria-label="Twitter">
                   <Image
                     src={image2}
                     alt="logo"

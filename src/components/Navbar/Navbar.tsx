@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { classNames, NavData } from "@/utils";
-import { usePathname,useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Link as ScrollLink } from "react-scroll";
 import logo from "../../../public/assets/Brandlogo.png";
 
@@ -20,10 +20,25 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const handleNavagate = (item: any) => {
     setActiveSection(item.link);
-    if(pathname !== "/"){
-      router.push(`/#${item.link}`)
+    if (pathname !== "/") {
+      router.push("/");
+      const checkUrlAndScroll = () => {
+        if (window.location.pathname === "/") {
+          const element = document.getElementById(item.link);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      };
+      setTimeout(checkUrlAndScroll, 300);
+    } else {
+      const element = document.getElementById(item.link);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
+
   return (
     <header className="fixed w-full z-50 top-0 bg-white sm:bg-transparent sm:top-8 left-0 right-0 max-md:px-2">
       <div className="max-lg:px-2 lg:container mx-auto rounded-2xl sm:rounded-[20px] drop-shadow-sm">
@@ -105,7 +120,9 @@ function Navbar() {
           </nav>
           <div className="hidden lg:flex items-center justify-end">
             <button className="px-6 py-3 border ring-[1px] w-[177px] h-[60px] bg-black text-white ring-gray-300 ring-offset-8 border-black font-semibold text-lg rounded-full transition-colors duration-150">
-              Learn More
+              <Link href="https://docs.google.com/document/d/1NvrSywk5laMTv-K53cTBzXvegxVVL5CZK1beJcxyqSg/edit?tab=t.0#heading=h.dq4ppr4syd9c">
+                Learn More
+              </Link>
             </button>
           </div>
         </div>

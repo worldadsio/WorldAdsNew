@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import image6 from "../../../public/assets/flash_fill.png";
+import { ScrollElement, ScrollLink } from 'react-scroll';
 function Waldatoken() {
   return (
     <>
-    <section id="wlda-token" className="container mx-auto">
+    <section id="wlda-token"  className="container mx-auto">
       <div id="roadmap"  className={`relative overflow-hidden w-full h-auto mt-32`}>
         <div className="absolute left-0 right-0 top-0 w-full z-40">
           <Image
