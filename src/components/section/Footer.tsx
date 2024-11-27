@@ -17,13 +17,23 @@ export default function Footer() {
             </h1>
           </div>
           <div className="grid grid-cols-1 text-center md:text-start md:grid-cols-2 text-[18px] font-medium leading-[23px] mt-10 md:mt-4 gap-6 text-sm">
-            <Link href=" https://worldadsio.medium.com/" className="hover:underline">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href=" https://worldadsio.medium.com/"
+              className="hover:underline"
+            >
               Blog
             </Link>
             <Link href="/privacypolicy" className="hover:underline">
               Privacy Policy
             </Link>
-            <Link href="https://docs.worldads.io/contact" className="hover:underline">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://docs.worldads.io/contact"
+              className="hover:underline"
+            >
               Contact Us
             </Link>
             <Link href="/termsService" className="hover:underline">
@@ -47,20 +57,43 @@ export default function Footer() {
           <hr className="w-[551px] border hidden  md:block border-[#7E7E7E]" />
           <div className="flex gap-5 w-full justify-center md:w-auto items-center ">
             <Link
-              href="https://x.com/worldadsdotio"aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/worldadsdotio"
+              aria-label="Twitter"
             >
               <Image src={twitter} alt="Twitter" width={24} height={24} />
             </Link>
-            <Link href="https://www.linkedin.com/company/worldadsdotio/" aria-label="LinkedIn">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/worldadsdotio/"
+              aria-label="LinkedIn"
+            >
               <Image src={LinkedIn} alt="LinkedIn" width={24} height={24} />
             </Link>
-            <Link href="https://t.me/worldadscommunity" aria-label="Telegram">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://t.me/worldadscommunity"
+              aria-label="Telegram"
+            >
               <Image src={Telegram} alt="Telegram" width={24} height={24} />
             </Link>
-            <Link href="https://discord.gg/P94JWEwbeE" aria-label="discord">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://discord.gg/P94JWEwbeE"
+              aria-label="discord"
+            >
               <Image src={discord} alt="discord" width={24} height={24} />
             </Link>
-            <Link href="https://worldadsio.medium.com/" aria-label="medium">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://worldadsio.medium.com/"
+              aria-label="medium"
+            >
               <Image src={medium} alt="medium" width={24} height={24} />
             </Link>
           </div>

@@ -1,36 +1,54 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
-import { classNames, NavData } from "@/utils";
+import React, { useState, useEffect, useCallback } from "react";
+import { NavData } from "@/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { Link as ScrollLink } from "react-scroll";
 import logo from "../../../public/assets/Brandlogo.png";
 
 function Navbar() {
-  const options = {
-    duration: 500,
-    smooth: true,
-  };
-
   const router = useRouter();
   const pathname = usePathname();
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const handleNavagate = (item: any) => {
+  const observeSections = useCallback(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  useEffect(() => {
+    if (pathname === "/") {
+      observeSections();
+    }
+  }, [pathname, observeSections]);
+
+  const handleNavigate = (item: any) => {
     setActiveSection(item.link);
     if (pathname !== "/") {
       router.push("/");
-      const checkUrlAndScroll = () => {
-        if (window.location.pathname === "/") {
-          const element = document.getElementById(item.link);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
+      setTimeout(() => {
+        const element = document.getElementById(item.link);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
         }
-      };
-      setTimeout(checkUrlAndScroll, 300);
+      }, 300);
     } else {
       const element = document.getElementById(item.link);
       if (element) {
@@ -106,7 +124,7 @@ function Navbar() {
                   smooth={true}
                   duration={300}
                   offset={-70}
-                  onClick={() => handleNavagate(item)}
+                  onClick={() => handleNavigate(item)}
                   className={`text-xl px-6 py-1.5 rounded-full cursor-pointer font-medium ${
                     activeSection === item.link && pathname === "/"
                       ? "bg-[#FC3603] text-white shadow-[0_0px_60px_-10px_rgb(252,54,3)]"
@@ -120,13 +138,18 @@ function Navbar() {
           </nav>
           <div className="hidden lg:flex items-center justify-end">
             <button className="px-6 py-3 border ring-[1px] w-[177px] h-[60px] bg-black text-white ring-gray-300 ring-offset-8 border-black font-semibold text-lg rounded-full transition-colors duration-150">
-              <Link href="https://docs.google.com/document/d/1NvrSywk5laMTv-K53cTBzXvegxVVL5CZK1beJcxyqSg/edit?tab=t.0#heading=h.dq4ppr4syd9c">
-                Learn More
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://docs.google.com/document/d/1NvrSywk5laMTv-K53cTBzXvegxVVL5CZK1beJcxyqSg/edit?tab=t.0#heading=h.dq4ppr4syd9c"
+              >
+                Lite Paper
               </Link>
             </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={`${
             isOpen ? "block" : "hidden"
