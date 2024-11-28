@@ -137,15 +137,15 @@ function Navbar() {
             ))}
           </nav>
           <div className="hidden lg:flex items-center justify-end">
-            <button className="px-6 py-3 border ring-[1px] w-[177px] h-[60px] bg-black text-white ring-gray-300 ring-offset-8 border-black font-semibold text-lg rounded-full transition-colors duration-150">
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://docs.google.com/document/d/1NvrSywk5laMTv-K53cTBzXvegxVVL5CZK1beJcxyqSg/edit?tab=t.0#heading=h.dq4ppr4syd9c"
-              >
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://docs.google.com/document/d/1NvrSywk5laMTv-K53cTBzXvegxVVL5CZK1beJcxyqSg/edit?tab=t.0#heading=h.dq4ppr4syd9c"
+            >
+              <button className="px-6 py-3 border ring-[1px] w-[177px] h-[60px] bg-black text-white ring-gray-300 ring-offset-8 border-black font-semibold text-lg rounded-full transition-colors duration-150">
                 Lite Paper
-              </Link>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
 
