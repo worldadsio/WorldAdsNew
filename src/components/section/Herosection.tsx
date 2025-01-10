@@ -1,11 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import image1 from "../../../public/assets/discord.png";
 import image2 from "../../../public/assets/ant-design.png";
 import image3 from "../../../public/Images/Hero.png";
 import { Outfit_font } from "@/fonts";
 import Link from "next/link";
 function Herosection() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <section id="herosection" className="container mx-auto relative">
       <div className="grid-background  pt-400"></div>
@@ -70,17 +72,31 @@ function Herosection() {
         </div>
       </div>
 
-      <div className="w-full flex justify-center image-container ">
-        <div className=""></div>
+      <div className="w-full flex justify-center  items-center relative">
         <Image
           src={image3}
-          alt="logo"
-          width={0}
-          height={0}
+          alt="Hero background"
           layout="responsive"
           priority
-          className="h-[486px] w-[1132px] "
+          className="h-[486px] w-[1132px] object-cover"
         />
+        {/* <div className="w-full flex bg-red-500 justify-center rounded-xl ">
+          <div
+            style={{
+              clipPath: "polygon(5% 0%, 58% 8%, 60% 98%, 3% 99%)",
+            }}
+            className=" absolute top-[33px]  right-0 rounded-2xl skew-y-3 w-[70%] mx-auto mt-10 h-[30vh] flex items-center shadow-inner"
+          >
+            <iframe
+              src="https://s3-figma-videos-production-sig.figma.com/video/1393805997227218407/TEAM/7f76/8090/-e289-45ef-8ae7-e61996961b49?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BAwKbifxlPAt~4n-XWAEiEt~ZNxVdqvd7YMOyDXV5rYmHCZ68TN~9viDZ6pNBN7eBqYKCnE-y8H9nWXgjztQMJJ8WPK3pAUjqHpWONGGOsQ10jLsgHmiq-rxm1PuOCFBOyLteGVc~pMdQqOvRAW4HyTuUkkXJhmsM8-7XT73fHW7VZJ1lKhxscmpwlxLb6gSIvsKO3nNCIGst73OjFjcDZET5jO51vYfjFpqbZNoceUPDVhqmJ86qKDqbym-eGON8guwQnuP6ZVcEaYrjP6dlma0Osj6t5FjM4MFy-L4XS5K6-G7EdGOs4TEdH9Q7aZcV68Wo2-YUeljWXLXnBvbVw__"
+              title="Promotional Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 right-0 w-full h-full rounded-2xl shadow-inner  object-cover"
+            />
+          </div>
+        </div> */}
       </div>
     </section>
   );
