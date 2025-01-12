@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import image1 from "../../../public/assets/discord.png";
 import image2 from "../../../public/assets/ant-design.png";
-import image3 from "../../../public/Images/Hero.png";
+import image3 from "../../../public/Images/Heroblank2.png";
+
 import { Outfit_font } from "@/fonts";
 import Link from "next/link";
 function Herosection() {
@@ -71,33 +72,63 @@ function Herosection() {
           </div>
         </div>
       </div>
-
-      <div className="w-full flex justify-center  items-center relative">
+      {/* flex justify-center  items-center */}
+      <div className="w-full  relative h-[200px] xxs:h-[182px]  xs:h-[200px] md:h-[340px] lg:h-[400px] xl:h-[500px] ">
         <Image
           src={image3}
           alt="Hero background"
           layout="responsive"
           priority
-          className="h-[486px] w-[1132px] object-cover"
+          className="h-[486px] w-[1132px]  object-fill z-30 absolute bottom-0 "
         />
-        {/* <div className="w-full flex bg-red-500 justify-center rounded-xl ">
+
+        {/* <div className="w-full flex bg-red-500 justify-center rounded-xl  "> */}
+       
+
           <div
-            style={{
-              clipPath: "polygon(5% 0%, 58% 8%, 60% 98%, 3% 99%)",
-            }}
-            className=" absolute top-[33px]  right-0 rounded-2xl skew-y-3 w-[70%] mx-auto mt-10 h-[30vh] flex items-center shadow-inner"
-          >
-            <iframe
-              src="https://s3-figma-videos-production-sig.figma.com/video/1393805997227218407/TEAM/7f76/8090/-e289-45ef-8ae7-e61996961b49?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BAwKbifxlPAt~4n-XWAEiEt~ZNxVdqvd7YMOyDXV5rYmHCZ68TN~9viDZ6pNBN7eBqYKCnE-y8H9nWXgjztQMJJ8WPK3pAUjqHpWONGGOsQ10jLsgHmiq-rxm1PuOCFBOyLteGVc~pMdQqOvRAW4HyTuUkkXJhmsM8-7XT73fHW7VZJ1lKhxscmpwlxLb6gSIvsKO3nNCIGst73OjFjcDZET5jO51vYfjFpqbZNoceUPDVhqmJ86qKDqbym-eGON8guwQnuP6ZVcEaYrjP6dlma0Osj6t5FjM4MFy-L4XS5K6-G7EdGOs4TEdH9Q7aZcV68Wo2-YUeljWXLXnBvbVw__"
+          style={{
+            // clipPath: "polygon(5% 0%, 58% 8%, 60% 98%, 3% 99%)",
+           
+          }}
+          
+            className=" absolute top-[55px] xxs:top-[18px] sm:top-[-15px] md:top-[40px] lg:top-[10px] xl:top-[-30px] left-[95px] xxs:left-[112px] xs:left-[125px] sm:left-[157px] md:left-[230px] lg:left-[309px] xl:left-[433px]  rounded-2xl skew-y-3 w-[43%] mx-auto mt-10 h-[60px] xxs:h-[75px] xs:h-[80px] sm:h-[100px] md:h-[150px] lg:h-[200px] xl:h-[280px]   flex items-center shadow-inner z-20 overflow-hidden 
+            
+           border-[5px] md:border-[0.625rem] xl:border-[1.25rem]  border-black rounded-b-none 
+           
+     
+           
+            "
+            // xl:[clip-path:polygon(6% -4%,75% 15%,67% 100%,0% 100%)]
+          >         
+          <video
+  src="/Images/Herovideo.mp4"
+  controls
+  autoPlay
+  loop
+  muted
+  playsInline
+  
+  
+/>
+
+
+         
+            {/* <iframe
+              // src="https://s3-figma-videos-production-sig.figma.com/video/1393805997227218407/TEAM/7f76/8090/-e289-45ef-8ae7-e61996961b49?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BAwKbifxlPAt~4n-XWAEiEt~ZNxVdqvd7YMOyDXV5rYmHCZ68TN~9viDZ6pNBN7eBqYKCnE-y8H9nWXgjztQMJJ8WPK3pAUjqHpWONGGOsQ10jLsgHmiq-rxm1PuOCFBOyLteGVc~pMdQqOvRAW4HyTuUkkXJhmsM8-7XT73fHW7VZJ1lKhxscmpwlxLb6gSIvsKO3nNCIGst73OjFjcDZET5jO51vYfjFpqbZNoceUPDVhqmJ86qKDqbym-eGON8guwQnuP6ZVcEaYrjP6dlma0Osj6t5FjM4MFy-L4XS5K6-G7EdGOs4TEdH9Q7aZcV68Wo2-YUeljWXLXnBvbVw__"
+             
               title="Promotional Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute top-0 right-0 w-full h-full rounded-2xl shadow-inner  object-cover"
-            />
+              
+            /> */}
           </div>
-        </div> */}
+        
+
+        {/* </div> */}
       </div>
+      
     </section>
   );
 }

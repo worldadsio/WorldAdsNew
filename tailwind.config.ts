@@ -20,6 +20,14 @@ export default {
         "brand-effect": "var(--brand-effect)",
       },
     },
+    screens:{
+      xxs: "375px",
+      xs: "425px",
+      sm: "525px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+    }
   },
   plugins: [],
 } satisfies Config;
