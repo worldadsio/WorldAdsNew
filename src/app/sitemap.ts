@@ -17,7 +17,7 @@ const changeFrequency: ChangeFrequency = "daily";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = NavData.map((route) => ({
-    url: `${WEBSITE_HOST_URL}/${route.link}`,
+    url: `${WEBSITE_HOST_URL}/#${route.link}`,
     lastModified: new Date().toISOString(),
     changeFrequency,
     priority: 1,
